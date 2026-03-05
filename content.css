@@ -1,0 +1,245 @@
+/* NotebookLM Code Highlight - content.css */
+
+/* ---- Bundled font: JetBrains Mono ---- */
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrainsMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrainsMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- Pre / Code block base ---- */
+.message-text-content pre.hljs-pre {
+  position: relative;
+  margin: 12px 0;
+  padding: 2.2em 1em 1em 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  border: 1px solid transparent;
+}
+
+.message-text-content pre.hljs-pre code.hljs {
+  display: block;
+  padding: 0;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: pre;
+}
+
+/* ---- Language label ---- */
+.hljs-lang-label {
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', 'Consolas', monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ---- Copy button ---- */
+.hljs-copy-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  padding: 2px 10px;
+  font-size: 0.72rem;
+  font-family: inherit;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.message-text-content pre.hljs-pre:hover .hljs-copy-btn {
+  opacity: 1;
+}
+
+/* ============================
+   DARK THEME (default)
+   ============================ */
+[data-hljs-theme="dark"] .message-text-content pre.hljs-pre {
+  background: #282a36;
+  border-color: #44475a;
+  color: #f8f8f2;
+}
+
+[data-hljs-theme="dark"] .hljs-lang-label {
+  color: #bd93f9;
+}
+
+[data-hljs-theme="dark"] .hljs-copy-btn {
+  background: #44475a;
+  border-color: #6272a4;
+  color: #f8f8f2;
+}
+
+[data-hljs-theme="dark"] .hljs-copy-btn:hover {
+  background: #6272a4;
+}
+
+/* Dracula palette */
+[data-hljs-theme="dark"] .hljs-keyword,
+[data-hljs-theme="dark"] .hljs-selector-tag,
+[data-hljs-theme="dark"] .hljs-tag .hljs-name {
+  color: #ff79c6;
+}
+
+[data-hljs-theme="dark"] .hljs-string,
+[data-hljs-theme="dark"] .hljs-attr,
+[data-hljs-theme="dark"] .hljs-attribute {
+  color: #f1fa8c;
+}
+
+[data-hljs-theme="dark"] .hljs-comment,
+[data-hljs-theme="dark"] .hljs-doctag {
+  color: #6272a4;
+  font-style: italic;
+}
+
+[data-hljs-theme="dark"] .hljs-number,
+[data-hljs-theme="dark"] .hljs-literal {
+  color: #bd93f9;
+}
+
+[data-hljs-theme="dark"] .hljs-title,
+[data-hljs-theme="dark"] .hljs-title.function_,
+[data-hljs-theme="dark"] .hljs-title.class_ {
+  color: #50fa7b;
+}
+
+[data-hljs-theme="dark"] .hljs-built_in,
+[data-hljs-theme="dark"] .hljs-type {
+  color: #8be9fd;
+}
+
+[data-hljs-theme="dark"] .hljs-variable,
+[data-hljs-theme="dark"] .hljs-params {
+  color: #ffb86c;
+}
+
+[data-hljs-theme="dark"] .hljs-operator,
+[data-hljs-theme="dark"] .hljs-punctuation {
+  color: #f8f8f2;
+}
+
+[data-hljs-theme="dark"] .hljs-meta,
+[data-hljs-theme="dark"] .hljs-meta .hljs-keyword {
+  color: #ff79c6;
+}
+
+[data-hljs-theme="dark"] .hljs-selector-class,
+[data-hljs-theme="dark"] .hljs-selector-id {
+  color: #50fa7b;
+}
+
+[data-hljs-theme="dark"] .hljs-property {
+  color: #8be9fd;
+}
+
+[data-hljs-theme="dark"] .hljs-tag .hljs-attr {
+  color: #50fa7b;
+}
+
+/* ============================
+   LIGHT THEME
+   ============================ */
+[data-hljs-theme="light"] .message-text-content pre.hljs-pre {
+  background: #f8f8f8;
+  border-color: #ddd;
+  color: #333;
+}
+
+[data-hljs-theme="light"] .hljs-lang-label {
+  color: #6f42c1;
+}
+
+[data-hljs-theme="light"] .hljs-copy-btn {
+  background: #eee;
+  border-color: #ccc;
+  color: #333;
+}
+
+[data-hljs-theme="light"] .hljs-copy-btn:hover {
+  background: #ddd;
+}
+
+/* VS Code Light palette */
+[data-hljs-theme="light"] .hljs-keyword,
+[data-hljs-theme="light"] .hljs-selector-tag,
+[data-hljs-theme="light"] .hljs-tag .hljs-name {
+  color: #0000ff;
+}
+
+[data-hljs-theme="light"] .hljs-string,
+[data-hljs-theme="light"] .hljs-attr,
+[data-hljs-theme="light"] .hljs-attribute {
+  color: #a31515;
+}
+
+[data-hljs-theme="light"] .hljs-comment,
+[data-hljs-theme="light"] .hljs-doctag {
+  color: #008000;
+  font-style: italic;
+}
+
+[data-hljs-theme="light"] .hljs-number,
+[data-hljs-theme="light"] .hljs-literal {
+  color: #098658;
+}
+
+[data-hljs-theme="light"] .hljs-title,
+[data-hljs-theme="light"] .hljs-title.function_,
+[data-hljs-theme="light"] .hljs-title.class_ {
+  color: #795e26;
+}
+
+[data-hljs-theme="light"] .hljs-built_in,
+[data-hljs-theme="light"] .hljs-type {
+  color: #267f99;
+}
+
+[data-hljs-theme="light"] .hljs-variable,
+[data-hljs-theme="light"] .hljs-params {
+  color: #001080;
+}
+
+[data-hljs-theme="light"] .hljs-operator,
+[data-hljs-theme="light"] .hljs-punctuation {
+  color: #333;
+}
+
+[data-hljs-theme="light"] .hljs-meta,
+[data-hljs-theme="light"] .hljs-meta .hljs-keyword {
+  color: #af00db;
+}
+
+[data-hljs-theme="light"] .hljs-selector-class,
+[data-hljs-theme="light"] .hljs-selector-id {
+  color: #800000;
+}
+
+[data-hljs-theme="light"] .hljs-property {
+  color: #001080;
+}
+
+[data-hljs-theme="light"] .hljs-tag .hljs-attr {
+  color: #e50000;
+}

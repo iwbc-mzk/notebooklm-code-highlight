@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotebookLM Code Highlight</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <img src="../icons/icon48.png" alt="icon" class="header-icon">
+      <div class="header-text">
+        <h1 class="header-title">Code Highlight</h1>
+        <p class="header-sub">for NotebookLM</p>
+      </div>
+      <span class="status-badge" id="statusBadge">ON</span>
+    </header>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <div class="row">
+        <div class="row-label">
+          <span class="row-title">ハイライト</span>
+          <span class="row-desc">シンタックスハイライトを有効にする</span>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="enabledToggle">
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </span>
+        </label>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+      <p class="section-title">テーマ</p>
+      <div class="theme-selector">
+        <label class="theme-option" id="themeDark">
+          <input type="radio" name="theme" value="dark">
+          <span class="theme-card dark-card">
+            <span class="theme-preview">
+              <span class="preview-line kw">def</span>
+              <span class="preview-line str">"hello"</span>
+              <span class="preview-line cm"># comment</span>
+            </span>
+            <span class="theme-name">Dark</span>
+          </span>
+        </label>
+        <label class="theme-option" id="themeLight">
+          <input type="radio" name="theme" value="light">
+          <span class="theme-card light-card">
+            <span class="theme-preview">
+              <span class="preview-line kw">def</span>
+              <span class="preview-line str">"hello"</span>
+              <span class="preview-line cm"># comment</span>
+            </span>
+            <span class="theme-name">Light</span>
+          </span>
+        </label>
+      </div>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

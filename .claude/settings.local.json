@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/iwbc_/.claude/**)",
+      "Read(//c/Users/iwbc_/AppData/Roaming/Claude/**)",
+      "Bash(claude mcp:*)",
+      "Bash(npx:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs",
+      "Bash(mkdir:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}
