@@ -25,7 +25,7 @@
   "content_scripts": [
     {
       "matches": ["https://notebooklm.google.com/*"],
-      "js": ["lib/highlight.min.js", "content.js"],
+      "js": ["lib/highlight.min.js", "lib/mermaid.min.js", "content.js"],
       "css": ["content.css"],
       "run_at": "document_idle"
     }

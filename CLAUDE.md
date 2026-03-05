@@ -27,6 +27,7 @@ Google NotebookLMのチャット欄に出力されたコードブロック（マ
 
 ### 機能
 - ON/OFF トグル（拡張機能を有効/無効）
+- Mermaid図表トグル（classDiagramを図としてレンダリング、独立してON/OFF可能）
 - ライト/ダークテーマ切り替え
 - 設定画面（Popup UI）
 
@@ -43,7 +44,8 @@ Google NotebookLMのチャット欄に出力されたコードブロック（マ
 
 - **Manifest**: Manifest V3
 - **コンテンツスクリプト**: content.js / content.css
-- **シンタックスハイライトライブラリ**: highlight.js（CDNではなくバンドル）
+- **シンタックスハイライトライブラリ**: highlight.js 11.11.1（CDNではなくバンドル）
+- **Mermaidレンダリングライブラリ**: mermaid.js 10.9.1（CDNではなくバンドル）
 - **Popup**: popup.html / popup.js / popup.css
 - **設定の永続化**: chrome.storage.sync
 
@@ -53,14 +55,18 @@ Google NotebookLMのチャット欄に出力されたコードブロック（マ
 notebooklm-code-highlight/
 ├── CLAUDE.md
 ├── manifest.json
-├── content.js          # DOMの監視・コードブロックの検出・変換
-├── content.css         # コードブロックのスタイル
+├── content.js          # DOMの監視・コードブロックの検出・変換・Mermaidレンダリング
+├── content.css         # コードブロック・Mermaidコンテナのスタイル
 ├── popup/
 │   ├── popup.html
 │   ├── popup.js
 │   └── popup.css
 ├── lib/
-│   └── highlight.min.js  # highlight.jsのバンドル
+│   ├── highlight.min.js  # highlight.js 11.11.1のバンドル
+│   └── mermaid.min.js    # mermaid.js 10.9.1のバンドル
+├── fonts/
+│   ├── JetBrainsMono-Regular.ttf
+│   └── JetBrainsMono-Medium.ttf
 └── icons/
     ├── icon16.png
     ├── icon48.png
@@ -102,6 +108,16 @@ div.chat-message-pair
 ### 注意点
 - `<code>` タグには言語クラスが付与されていない → highlight.jsの**自動言語検出**（`hljs.highlightAuto()`）を使用
 - Angularのカスタム要素（`labs-tailwind-structural-element-view-v2` 等）を使用しているが、Shadow DOMではなく通常DOM
+
+## Mermaid仕様
+
+- 検出: `<code>` の textContent が `/^\s*classDiagram\b/` にマッチする場合
+- classDiagramのみ対応（他の図種は今後の拡張予定）
+- 元の `<pre>` を非表示にし、直前に `.mermaid-container` div を挿入してSVGを描画
+- `mermaid.render(id, text)` はasync/awaitで呼び出す（mermaid v10+ API）
+- 描画失敗時は `<pre>` をそのまま表示（コードブロックにフォールバック）
+- テーマ変更時は既存の全Mermaidダイアグラムを再レンダリング
+- MermaidトグルをOFFにすると `.mermaid-container` を削除し、hljs再適用
 
 ## デザイン方針
 

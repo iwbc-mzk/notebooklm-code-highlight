@@ -29,6 +29,18 @@
   - [x] テーマ切り替えをcontent.jsに反映
 - [x] `popup/popup.css` を実装する
 
+## Mermaid図表機能
+- [x] mermaid.js 10.9.1 を `lib/` にバンドル
+- [x] `manifest.json` に mermaid.min.js を追加
+- [x] `content.js` にMermaid検出・レンダリングロジックを追加
+  - [x] `/^\s*classDiagram\b/` で検出
+  - [x] `mermaid.render()` でSVGを生成して `.mermaid-container` に挿入
+  - [x] 元の `<pre>` を非表示化（toggle OFFで復元）
+  - [x] テーマ変更時に全Mermaidダイアグラムを再レンダリング
+  - [x] 描画失敗時はコードブロックにフォールバック
+- [x] `content.css` に `.mermaid-container` スタイルを追加
+- [x] Popup に「Mermaid 図表」トグルを追加（ハイライトとは独立）
+
 ## Phase 4: 動作確認・調整
 - [x] Chromeの開発者モードで拡張機能をロードしてテスト
 - [x] 各対応言語のシンタックスハイライトが正しく動作するか確認

@@ -20,8 +20,8 @@ body {
   padding: 0 0 12px 0;
 }
 
-.popup-container.disabled .section:last-child,
-.popup-container.disabled .divider:last-of-type {
+.row.disabled,
+.section.disabled {
   opacity: 0.4;
   pointer-events: none;
 }
@@ -96,6 +96,12 @@ body {
 }
 
 /* ---- Row (label + toggle) ---- */
+.row.row-sub {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #313244;
+}
+
 .row {
   display: flex;
   align-items: center;

@@ -17,6 +17,33 @@
   font-display: swap;
 }
 
+/* ---- Mermaid diagram container ---- */
+.mermaid-container {
+  margin: 12px 0;
+  padding: 20px 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+.mermaid-container svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+[data-hljs-theme="dark"] .mermaid-container {
+  background: #282a36;
+  border-color: #44475a;
+}
+
+[data-hljs-theme="light"] .mermaid-container {
+  background: #f8f8f8;
+  border-color: #ddd;
+}
+
 /* ---- Pre / Code block base ---- */
 .message-text-content pre.hljs-pre {
   position: relative;
